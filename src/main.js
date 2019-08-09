@@ -4,7 +4,7 @@ import {createMenuLayout} from './components/site-menu.js';
 import {createFiltersLayout} from './components/filters.js';
 import {createEventEditingLayout} from './components/editing-event.js';
 import {createSortingLayout} from './components/sorting.js';
-import {createDaysContainer} from './components/days-container.js';
+import {createDaysContainerLayout} from './components/days-container.js';
 import {createDayLayout} from './components/day.js';
 import {createEventLayout} from './components/event.js';
 
@@ -27,7 +27,7 @@ render(tripControlsSecondtHeader, createFiltersLayout(), `afterend`);
 const tripEventsContainer = document.querySelector(`.trip-events`);
 render(tripEventsContainer, createSortingLayout());
 render(tripEventsContainer, createEventEditingLayout());
-render(tripEventsContainer, createDaysContainer());
+render(tripEventsContainer, createDaysContainerLayout());
 
 const daysContainer = tripEventsContainer.querySelector(`.trip-days`);
 render(daysContainer, createDayLayout());

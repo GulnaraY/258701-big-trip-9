@@ -1,5 +1,5 @@
 // Контейнер для дней
-export const createDaysContainer = () => {
+export const createDaysContainerLayout = () => {
   return `<ul class="trip-days">
   </ul>`;
 };
