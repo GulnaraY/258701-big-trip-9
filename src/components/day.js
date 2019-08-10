@@ -2,11 +2,11 @@
 
 import {createEventLayout} from './event';
 
-const DAYS_COUNT = 3;
+const EVENTS_AMOUNT = 3;
 
 export const createDayLayout = () => {
 
-  const eventsLayout = new Array(DAYS_COUNT).fill(``).map(() => {
+  const eventsLayout = new Array(EVENTS_AMOUNT).fill(``).map(() => {
     return `${createEventLayout()}`;
   });
 
