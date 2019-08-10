@@ -5,9 +5,6 @@ import {createFiltersLayout} from './components/filters.js';
 import {createEventEditingLayout} from './components/editing-event.js';
 import {createSortingLayout} from './components/sorting.js';
 import {createDaysContainerLayout} from './components/days-container.js';
-import {createDayLayout} from './components/day.js';
-import {createEventLayout} from './components/event.js';
-
 
 // Функция рендера
 const render = (container, template, place = `beforeend`) => {
@@ -28,9 +25,3 @@ const tripEventsContainer = document.querySelector(`.trip-events`);
 render(tripEventsContainer, createSortingLayout());
 render(tripEventsContainer, createEventEditingLayout());
 render(tripEventsContainer, createDaysContainerLayout());
-
-const daysContainer = tripEventsContainer.querySelector(`.trip-days`);
-render(daysContainer, createDayLayout());
-
-const eventsContainer = tripEventsContainer.querySelector(`.trip-events__list`);
-new Array(3).fill(``).forEach(() => render(eventsContainer, createEventLayout()));
