@@ -6,13 +6,12 @@ const DAYS_AMOUNT = 2;
 export const createDaysContainerLayout = () => {
   const daysLayout = new Array(DAYS_AMOUNT).fill(``).map(() => {
     return `${createDayLayout()}`;
-  });
+  }).join(``);
 
-  const layoutParts = [
-    `<ul class="trip-days">`,
-    daysLayout.join(``),
-    `</ul>`
-  ];
+  const layout =
+    `<ul class="trip-days">
+    ${daysLayout}
+    </ul>`;
 
-  return layoutParts.join(``);
+  return layout;
 };
