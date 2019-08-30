@@ -2,7 +2,6 @@
 import {createTripInfoLayout} from './components/trip-info.js';
 import {createMenuLayout} from './components/site-menu.js';
 import {createFiltersLayout} from './components/filters.js';
-import {createEventEditingLayout} from './components/editing-event.js';
 import {createSortingLayout} from './components/sorting.js';
 import {createDaysContainerLayout} from './components/days-container.js';
 
@@ -23,5 +22,5 @@ render(tripControlsSecondtHeader, createFiltersLayout(), `afterend`);
 
 const tripEventsContainer = document.querySelector(`.trip-events`);
 render(tripEventsContainer, createSortingLayout());
-render(tripEventsContainer, createEventEditingLayout());
+// render(tripEventsContainer, createEventEditingLayout());
 render(tripEventsContainer, createDaysContainerLayout());

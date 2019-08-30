@@ -1,25 +1,19 @@
 // День путешествия
 
-import {createEventLayout} from './event';
+import {makeEditingEvent} from './editing-event.js';
+import {makeEvent} from './event.js';
+import {editingEvent} from '../data.js';
+let isFirstRender = true;
 
-const EVENTS_AMOUNT = 3;
+export const createDayLayout = (events) => {
 
-export const createDayLayout = () => {
+  const eventsLayout = events.map(makeEvent).join(``);
+  const editingLayout = editingEvent.map(makeEditingEvent).join(``);
 
-  const eventsLayout = new Array(EVENTS_AMOUNT).fill(``).map(() => {
-    return `${createEventLayout()}`;
-  }).join(``);
-
-  const layout =
-    `<li class="trip-days__item  day">
-    <div class="day__info">
-      <span class="day__counter">1</span>
-      <time class="day__date" datetime="2019-03-18">MAR 18</time>
-    </div>
-    <ul class="trip-events__list">
+  const layout = `<ul class="trip-events__list">
+    ${isFirstRender ? editingLayout : ``}
     ${eventsLayout}
-    </ul>
-    </li>`;
-
+    </ul>`;
+  isFirstRender = false;
   return layout;
 };
